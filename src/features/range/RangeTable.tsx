@@ -42,7 +42,7 @@ export function RangeTable(props: Props) {
           ))}
           <TableRow>
             <TableCell rowSpan={1} />
-            <TableCell colSpan={1}>
+            <TableCell colSpan={2}>
               <Typography>
                 <Box fontWeight={500}>Total Tax</Box>
               </Typography>
