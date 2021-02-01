@@ -32,8 +32,10 @@ export function RangeTable(props: Props) {
           {props.taxes.map((result, i) => (
             <TableRow>
               <TableCell>
-                ${i === 0 ? 0 : props.taxes[i - 1].amount} - $
-                {props.taxes[i].amount}
+                ${i === 0 ? 0 : props.taxes[i - 1].amount}
+                {result.amount === Number.MAX_SAFE_INTEGER
+                  ? "+"
+                  : ` - $${props.taxes[i].amount}`}
               </TableCell>
               <TableCell>${(result.tax + result.untaxed).toFixed(2)}</TableCell>
               <TableCell>{result.percent * 100}%</TableCell>
